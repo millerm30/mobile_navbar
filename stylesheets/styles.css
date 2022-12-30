@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1f2327;
+    padding-block: 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FF9950;
+  transform-origin: bottom center;
+  transition: transform 0.25s ease-out;
+}
+
+.navbar a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom center;
+}
+
+.logo {
+    margin-right: 50px;
+    color: #fff;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+#toggler,
+.navbar label {
+    display: none;
+}
+
+.ri-menu-line {
+  font-size: 20px;
+  color: #fff;
+}
+
+main {
+    background-color: #fff;
+    padding: 15px;
+}
+
+main h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    height: calc(100vh - 144px);
+}
+
+footer {
+    background-color: #1f2327;
+    padding: 15px;
+    text-align: center;
+}
+
+footer p {
+    color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+
+    .menu {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .list {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .navbar label {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    #toggler:checked ~ .menu {
+        max-height: 100%;
+    }
+
+}
